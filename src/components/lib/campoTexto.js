@@ -22,17 +22,17 @@ const styles = {
         height: 40,
         flexDirection: 'row', 
         alignItems: 'center',
-        marginTop: 100
     },
     campoTextoStyle: { 
         color: '#000',
         width: 100,
-        height: 40,
+        height: 20,
         paddingLeft: 5,
         paddingRight: 5,
         fontSize: 19,
         lineHeight: 24,
-        flex: 2
+        flex: 2,
+        borderColor: '#ddd',
     }
 
 };

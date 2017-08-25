@@ -20,8 +20,7 @@ const styles = {
         borderColor: '#acacac',
         marginLeft: 5, 
         marginRight: 5, 
-        padding: 5,
-        marginTop: 20
+        padding: 5
     },
     textoStyle: {
         alignSelf: 'center',
