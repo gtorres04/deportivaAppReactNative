@@ -6,9 +6,7 @@ import Boton from './lib/boton';
 import CampoTexto from './lib/campoTexto';
 import Card from './lib/card';
 import CardSection from './lib/cardSection';
-import Encabezado from './lib/encabezado';
 import Spinner from './lib/spinner';
-import ListaFrutas from './listaFrutas';
 
 class FormularioLogin extends Component {
     state = {
@@ -25,7 +23,7 @@ class FormularioLogin extends Component {
         .catch(this.loginError.bind(this));
     }
     loginExitoso() {
-        Actions.users();
+        Actions.MenuDeportes();
         this.setState({ email: '', password: '', cargando: false });
     }
     loginError() {
@@ -44,8 +42,7 @@ class FormularioLogin extends Component {
     }
     render() {
         return (
-            <View style={{ flex: 1 }}>
-                <Encabezado tituloEncabezado={'Iniciar session'} />
+            <View>
                 <Card>
                     <CardSection>
                         <CampoTexto 
@@ -65,7 +62,6 @@ class FormularioLogin extends Component {
                         {this.mostrarSpinner()}
                     </CardSection>
                 </Card>
-                <ListaFrutas />
             </View>
         );
     }
