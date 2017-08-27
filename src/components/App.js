@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
+import { Provider } from 'react-redux';
 import firebase from 'firebase';
 import FormularioLogin from './formularioLogin';
 import Encabezado from './lib/encabezado';
@@ -7,8 +8,12 @@ import Boton from './lib/boton';
 import Spinner from './lib/spinner';
 import Card from './lib/card';
 import CardSection from './lib/cardSection';
+import storeRedux from '../store';
+import Router from '../Router';
+
 
 class App extends Component {
+    
     state = { sessionIniciada: null };
     componentWillMount() {
         firebase.initializeApp({
@@ -56,11 +61,12 @@ class App extends Component {
             );
         }
     }
+    //{this.contenidoSegunSession()}
     render() {
         return (
-            <View>
-                {this.contenidoSegunSession()}
-            </View>
+            <Provider store={storeRedux} >
+                <Router />
+            </Provider>
             
         );
     }

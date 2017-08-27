@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import firebase from 'firebase';
 import Boton from './lib/boton';
 import CampoTexto from './lib/campoTexto';
@@ -7,6 +8,7 @@ import Card from './lib/card';
 import CardSection from './lib/cardSection';
 import Encabezado from './lib/encabezado';
 import Spinner from './lib/spinner';
+import ListaFrutas from './listaFrutas';
 
 class FormularioLogin extends Component {
     state = {
@@ -23,6 +25,7 @@ class FormularioLogin extends Component {
         .catch(this.loginError.bind(this));
     }
     loginExitoso() {
+        Actions.users();
         this.setState({ email: '', password: '', cargando: false });
     }
     loginError() {
@@ -41,7 +44,7 @@ class FormularioLogin extends Component {
     }
     render() {
         return (
-            <View>
+            <View style={{ flex: 1 }}>
                 <Encabezado tituloEncabezado={'Iniciar session'} />
                 <Card>
                     <CardSection>
@@ -62,6 +65,7 @@ class FormularioLogin extends Component {
                         {this.mostrarSpinner()}
                     </CardSection>
                 </Card>
+                <ListaFrutas />
             </View>
         );
     }
