@@ -23,7 +23,7 @@ class FormularioLogin extends Component {
         .catch(this.loginError.bind(this));
     }
     loginExitoso() {
-        Actions.MenuDeportes();
+        Actions.tabbar();
         this.setState({ email: '', password: '', cargando: false });
     }
     loginError() {
@@ -42,7 +42,7 @@ class FormularioLogin extends Component {
     }
     render() {
         return (
-            <View>
+            <View style={{ flex: 1 }}>
                 <Card>
                     <CardSection>
                         <CampoTexto 
